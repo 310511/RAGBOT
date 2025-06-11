@@ -3,7 +3,7 @@ python-dotenv==1.0.1
 unstructured==0.10.30
 unstructured-inference==0.7.4
 unstructured-pytesseract==0.3.5
-llama-index==0.9.48
+llama-index>=0.9.48,<0.10.0
 langchain==0.1.12
 google-generativeai==0.4.1
 langchain-google-genai==0.0.11
