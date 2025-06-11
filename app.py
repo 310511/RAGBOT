@@ -6,8 +6,7 @@ import tempfile
 from dotenv import load_dotenv
 from unstructured.partition.pdf import partition_pdf
 from llama_index import Document, VectorStoreIndex, ServiceContext, SimpleDirectoryReader
-from llama_index.embeddings.langchain_embedding import LangchainEmbedding
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from llama_index.embeddings import GoogleGenerativeAIEmbedding
 from llama_index.llms import ChatGoogle
 import google.generativeai as genai
 import requests
@@ -45,7 +44,7 @@ def extract_text_with_unstructured(pdf_file):
     return [str(el) for el in elements if el.text]
 
 def build_index_from_chunks(text_chunks):
-    embeddings = LangchainEmbedding(GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=gemini_api_key))
+    embeddings = GoogleGenerativeAIEmbedding(model="models/embedding-001", google_api_key=gemini_api_key)
     service_context = ServiceContext.from_defaults(embed_model=embeddings)
     documents = [Document(text=t) for t in text_chunks]
     st.session_state.index = VectorStoreIndex.from_documents(documents, service_context=service_context)
