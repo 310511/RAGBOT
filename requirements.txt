@@ -15,4 +15,5 @@ numpy>=1.24.0
 pandas>=2.0.0
 pdfminer.six>=20221105
 opencv-python>=4.8.0
-unstructured-pytesseract>=0.3.5 
+unstructured-pytesseract>=0.3.5
+unstructured-inference>=0.7.4 
