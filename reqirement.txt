@@ -1,0 +1,9 @@
+streamlit
+python-dotenv
+unstructured
+llama-index
+langchain
+google-generativeai
+langchain-google-genai
+requests
+urllib3
