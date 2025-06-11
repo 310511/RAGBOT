@@ -5,11 +5,11 @@ import os
 import tempfile
 from dotenv import load_dotenv
 from unstructured.partition.pdf import partition_pdf
-from llama_index import Document, VectorStoreIndex, ServiceContext
-from llama_index.embeddings.langchain_embedding import LangchainEmbedding
+from llama_index.core import Document, VectorStoreIndex, ServiceContext
+from llama_index.embeddings import LangchainEmbedding
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from llama_index.llms import ChatGoogle
-from llama_index import SimpleDirectoryReader
+from llama_index.core import SimpleDirectoryReader
 import google.generativeai as genai
 import requests
 from requests.adapters import HTTPAdapter
